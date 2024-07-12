@@ -1769,8 +1769,8 @@ global.dfail = (type, m, conn) => {
     restrict: tradutor.texto10,
   }[type];
   const aa = { quoted: m, userJid: conn.user.jid };
-  const prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: tradutor.texto11[0], body: tradutor.texto11[1], thumbnail: imagen1, sourceUrl: tradutor.texto11[2] } } } }, aa);
-  if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id });
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '[ ⚠ ] Advertencia', body: '𝙈𝙖𝙮-𝘽𝙤𝙩', thumbnail: imagen1, sourceUrl: 'https://github.com/Anksawhs'}}}}, aa);
+  if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
 const file = global.__filename(import.meta.url, true);
